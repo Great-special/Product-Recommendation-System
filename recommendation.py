@@ -14,7 +14,7 @@ def transform_data(df_expanded):
 
 def train_predict_cluster(df_expanded):
     import joblib
-    model = joblib.load('kmeans_recommendation_model.pkl')
+    model = joblib.load('kmeans_recommendation_model_compressed.pkl')
     scaler = joblib.load('X-scaler.pkl')
     X_scaled = scaler.fit_transform(df_expanded)
     return model.fit_predict(X_scaled)
